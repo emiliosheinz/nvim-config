@@ -5,7 +5,6 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "Avoid bad stuff to happen :)" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected line up" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Delete line break" })
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format file" })
 
 -- native improvements
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go half page DOWN while keeping cursor centered" })
