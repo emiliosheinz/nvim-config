@@ -1,0 +1,1 @@
+require("emiliosheinz.config.lazy")
