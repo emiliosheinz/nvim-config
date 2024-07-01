@@ -32,6 +32,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.background = "dark"
+vim.opt.cursorline = true -- highlight the current cursor line
 
 -- split windows
 vim.opt.splitright = true
@@ -41,4 +42,3 @@ vim.opt.splitbelow = true
 vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.updatetime = 50
-
