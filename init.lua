@@ -1,1 +1,2 @@
-require("emiliosheinz")
+require("emiliosheinz.core")
+require("emiliosheinz.lazy")
