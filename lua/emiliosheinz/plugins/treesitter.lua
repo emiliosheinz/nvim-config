@@ -37,6 +37,8 @@ return {
 				"vimdoc",
 				"dockerfile",
 				"gitignore",
+				"vue",
+				"pug",
 			},
 			incremental_selection = {
 				enable = true,

@@ -10,6 +10,7 @@ return {
 			javascriptreact = { "eslint_d" },
 			typescriptreact = { "eslint_d" },
 			svelte = { "eslint_d" },
+			vue = { "eslint_d" },
 			python = { "pylint" },
 		}
 
@@ -22,8 +23,10 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>l", function()
-			lint.try_lint()
-		end, { desc = "Trigger linting for current file" })
+		vim.keymap.set("n", "<leader>lf", "mF:%!eslint_d --stdin --fix-to-stdout --stdin-filename %<CR>`F", {
+			desc = "Triggers linting fix for current file",
+			noremap = true,
+			silent = true,
+		})
 	end,
 }
