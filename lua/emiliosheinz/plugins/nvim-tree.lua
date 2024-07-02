@@ -37,12 +37,17 @@ return {
 				},
 				relativenumber = true,
 			},
-			-- change folder arrow icons
 			renderer = {
 				indent_markers = {
 					enable = true,
 				},
 				icons = {
+					show = {
+						git = false,
+						modified = false,
+						diagnostics = false,
+						bookmarks = false,
+					},
 					glyphs = {
 						folder = {
 							arrow_closed = "", -- arrow when folder is closed
