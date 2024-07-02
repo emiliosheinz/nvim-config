@@ -4,7 +4,11 @@ vim.keymap.set("n", "Q", "<nop>", { desc = "Avoid bad stuff to happen :)" })
 -- formatting
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected line up" })
+vim.keymap.set("v", "L", ">gv", { desc = "Indent selected lines right" })
+vim.keymap.set("v", "H", "<gv", { desc = "Indent selected lines left" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Delete line break" })
+vim.keymap.set("n", "<Enter>", "o<ESC>", { desc = "Insert new line below" })
+vim.keymap.set("n", "<S-Enter>", "O<ESC>", { desc = "Insert new line above" })
 
 -- native improvements
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go half page DOWN while keeping cursor centered" })
