@@ -43,6 +43,6 @@ return {
 			end,
 		})
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format file" })
+		vim.keymap.set({ "n", "v" }, "<leader>gf", vim.lsp.buf.format, { desc = "Format file" })
 	end,
 }
