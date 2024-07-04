@@ -6,37 +6,12 @@ return {
 	config = function()
 		local treesitter = require("nvim-treesitter.configs")
 		treesitter.setup({
+			auto_install = true,
 			highlight = {
 				enable = true,
 			},
 			indent = {
 				enable = true,
-			},
-			ensure_installed = {
-				"bash",
-				"c",
-				"diff",
-				"html",
-				"css",
-				"javascript",
-				"jsdoc",
-				"json",
-				"jsonc",
-				"typescript",
-				"tsx",
-				"markdown",
-				"markdown_inline",
-				"lua",
-				"luadoc",
-				"luap",
-				"regex",
-				"yaml",
-				"xml",
-				"prisma",
-				"vim",
-				"vimdoc",
-				"dockerfile",
-				"gitignore",
 			},
 			incremental_selection = {
 				enable = true,

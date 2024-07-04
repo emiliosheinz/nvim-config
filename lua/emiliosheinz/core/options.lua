@@ -42,3 +42,8 @@ vim.opt.splitbelow = true
 vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.updatetime = 50
+
+-- Makes sure to note show diagnostics inline
+vim.diagnostic.config({
+	virtual_text = false,
+})

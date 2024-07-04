@@ -7,7 +7,7 @@ return {
 		{
 			"L3MON4D3/LuaSnip",
 			-- follow latest release.
-			version = "v2.*", -- Replace <CurrentMajor> by the latest released major 
+			version = "v2.*", -- Replace <CurrentMajor> by the latest released major
 			-- install jsregexp (optional!).
 			build = "make install_jsregexp",
 		},
@@ -30,7 +30,7 @@ return {
 				completeopt = "menu,menuone,preview,noselect",
 			},
 			snippet = {
-        -- configure how nvim-cmp interacts with snippet engine
+				-- configure how nvim-cmp interacts with snippet engine
 				expand = function(args)
 					luasnip.lsp_expand(args.body)
 				end,
@@ -47,7 +47,7 @@ return {
 
 			-- sources for autocompletion
 			sources = cmp.config.sources({
-				{ name = 'nvim_lsp' },
+				{ name = "nvim_lsp" },
 				{ name = "luasnip" }, -- snippets
 				{ name = "buffer" }, -- text within current buffer
 				{ name = "path" }, -- file system paths
