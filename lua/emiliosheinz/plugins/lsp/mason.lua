@@ -22,8 +22,8 @@ return {
 					"tsserver",
 					"html",
 					"cssls",
-					"tailwindcss",
 					"lua_ls",
+					"tailwindcss",
 				},
 			})
 		end,
@@ -33,8 +33,8 @@ return {
 		config = function()
 			require("mason-tool-installer").setup({
 				ensure_installed = {
-				  "eslint_d",
-          "prettierd",
+					"eslint_d",
+					"prettierd",
 					"stylua",
 				},
 			})
