@@ -28,3 +28,32 @@ This repository serves as my personal Neovim configuration setup, tailored to en
 - [ripgrep](https://github.com/BurntSushi/ripgrep) for telescope.nvim
 - [iTerm2](https://iterm2.com/) or any terminal that supports true color and undercurl
     
+## 🛠️ Instalation
+
+- Make sure to backup your current Neovim config if you have one:
+        
+    ```bash 
+    # required
+    mv ~/.config/nvim{,.backup}
+
+    # optional but recommended
+    mv ~/.local/share/nvim{,.backup}
+    mv ~/.local/state/nvim{,.backup}
+    mv ~/.cache/nvim{,.backup}
+    ```    
+- Clone this repo into your Neovim config folder
+    
+    ```bash
+    git clone https://github.com/emiliosheinz/nvim-config ~/.config/nvim
+    ```
+- Remove the `.git` folder, so you can add it to your own repo later
+    
+    ```bash
+    rm -rf ~/.config/nvim/.git
+    ```
+
+- Start Neovim 🥳
+    
+    ```bash
+    nvim
+    ```
