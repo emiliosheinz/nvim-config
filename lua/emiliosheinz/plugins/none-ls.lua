@@ -30,6 +30,7 @@ return {
 					end,
 				}),
 				require("none-ls.diagnostics.eslint_d"),
+				require("none-ls.formatting.eslint_d"),
 			},
 			-- Configures autoformatting on save
 			on_attach = function(_, bufnr)
