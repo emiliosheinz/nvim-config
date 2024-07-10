@@ -16,7 +16,7 @@ vim.opt.backspace = "indent,eol,start"
 -- line wrapping
 vim.opt.wrap = false
 
--- undo tree config
+-- undo tree configuration
 vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undofile = true
@@ -26,7 +26,7 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
--- appearence
+-- appearance
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -43,7 +43,11 @@ vim.opt.clipboard:append("unnamedplus")
 
 vim.opt.updatetime = 50
 
--- Makes sure to note show diagnostics inline
+-- Makes sure to not show diagnostics inline
 vim.diagnostic.config({
 	virtual_text = false,
 })
+
+-- Set spell checking
+vim.opt.spelllang = "en_us"
+vim.opt.spell = true
