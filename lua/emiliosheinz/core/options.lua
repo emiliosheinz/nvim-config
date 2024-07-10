@@ -47,7 +47,3 @@ vim.opt.updatetime = 50
 vim.diagnostic.config({
 	virtual_text = false,
 })
-
--- Set spell checking
-vim.opt.spelllang = "en_us"
-vim.opt.spell = true
