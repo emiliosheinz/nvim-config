@@ -47,3 +47,7 @@ vim.opt.updatetime = 50
 vim.diagnostic.config({
 	virtual_text = false,
 })
+
+-- foldings
+vim.opt.foldenable = false
+vim.opt.foldmethod = "manual"
