@@ -27,3 +27,13 @@ vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })
 vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
+vim.keymap.set("n", "<leader>so", "<cmd>only<CR>", { desc = "Close all splits except current" })
+vim.keymap.set("n", "<C-,>", "<C-w>10<", { desc = "Decrease window width" })
+vim.keymap.set("n", "<C-.>", "<C-w>10>", { desc = "Increase window width" })
+vim.keymap.set("n", "<leader>H", "<C-w>H", { desc = "Move to the left window" })
+vim.keymap.set("n", "<leader>J", "<C-w>J", { desc = "Move to the bottom window" })
+vim.keymap.set("n", "<leader>K", "<C-w>K", { desc = "Move to the top window" })
+vim.keymap.set("n", "<leader>L", "<C-w>L", { desc = "Move to the right window" })
+
+-- greatest remap ever
+vim.keymap.set("v", "<leader>p", [["_dP]], { desc = "Preserved data in the buffer when replacing" })
