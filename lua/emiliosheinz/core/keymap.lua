@@ -30,8 +30,11 @@ vim.keymap.set("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current spli
 vim.keymap.set("n", "<leader>so", "<cmd>only<CR>", { desc = "Close all splits except current" })
 vim.keymap.set("n", "<C-,>", "<C-w>10<", { desc = "Decrease window width" })
 vim.keymap.set("n", "<C-.>", "<C-w>10>", { desc = "Increase window width" })
+vim.keymap.set("n", "<C-/>", "<C-w>5-", { desc = "Decrease window height" })
+vim.keymap.set("n", "<C-;>", "<C-w>5+", { desc = "Increase window height" })
 vim.keymap.set("n", "<leader>H", "<C-w>H", { desc = "Move to the left window" })
 vim.keymap.set("n", "<leader>J", "<C-w>J", { desc = "Move to the bottom window" })
+
 vim.keymap.set("n", "<leader>K", "<C-w>K", { desc = "Move to the top window" })
 vim.keymap.set("n", "<leader>L", "<C-w>L", { desc = "Move to the right window" })
 
