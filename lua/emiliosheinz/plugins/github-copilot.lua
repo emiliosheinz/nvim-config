@@ -9,5 +9,7 @@ return {
 		vim.keymap.set("i", "<C-w>", "<Plug>(copilot-accept-word)")
 		vim.keymap.set("i", "<C-l>", "<Plug>(copilot-accept-line)")
 		vim.keymap.set("i", "<C-d>", "<Plug>(copilot-dismiss)")
+		-- Disable copilot by default
+		vim.cmd(":Copilot disable")
 	end,
 }
