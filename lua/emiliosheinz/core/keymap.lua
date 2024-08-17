@@ -40,3 +40,9 @@ vim.keymap.set("n", "<leader>L", "<C-w>L", { desc = "Move to the right window" }
 
 -- greatest remap ever
 vim.keymap.set("v", "<leader>p", [["_dP]], { desc = "Preserved data in the buffer when replacing" })
+
+-- qflist navigation
+vim.keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Go to next quickfix item" })
+vim.keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = "Go to previous quickfix item" })
+vim.keymap.set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
+vim.keymap.set("n", "<leader>qc", ":cclose<CR>", { desc = "Close quickfix list" })
