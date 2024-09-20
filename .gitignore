@@ -1,3 +1,4 @@
 lazy-lock.json
 lazyvim.json
 .init.lua.swp
+deps/
