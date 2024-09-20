@@ -51,3 +51,12 @@ vim.diagnostic.config({
 -- foldings
 vim.opt.foldenable = false
 vim.opt.foldmethod = "manual"
+
+-- Line wrapping
+vim.opt.textwidth = 0
+vim.opt.wrapmargin = 0
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
+-- Enable mouse in all modes, specially used for resizing splits
+vim.opt.mouse = "a"
