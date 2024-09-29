@@ -46,3 +46,9 @@ vim.keymap.set("n", "<leader>qn", ":cnext<CR>", { desc = "Go to next quickfix it
 vim.keymap.set("n", "<leader>qp", ":cprev<CR>", { desc = "Go to previous quickfix item" })
 vim.keymap.set("n", "<leader>qo", ":copen<CR>", { desc = "Open quickfix list" })
 vim.keymap.set("n", "<leader>qc", ":cclose<CR>", { desc = "Close quickfix list" })
+
+-- allow navigation in insert mode
+vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left in insert mode" })
+vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down in insert mode" })
+vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up in insert mode" })
+vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
