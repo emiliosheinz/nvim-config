@@ -1,3 +1,4 @@
+-- TODO: Need improvements, adding the chat feature would be great
 return {
   "github/copilot.vim",
   config = function()
