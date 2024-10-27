@@ -1,9 +1,14 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
-	init = function()
-		vim.o.timeout = true
-		vim.o.timeoutlen = 1000
-	end,
-	opts = {},
+	opts = {
+		delay = function()
+			return 1000
+		end,
+		icons = {
+			rules = false,
+			mappings = false,
+			separator = "-",
+		},
+	},
 }
