@@ -68,6 +68,6 @@ Reference: https://www.youtube.com/watch?v=9JCsPsdeflY
 
 1. Search for the term you wan to replace using Telescope: `<leader>fs`
 2. Send all the results to the quickfix list using `<C-q>` 
-3. Run `:cfdo %s/old/new/g | update | db` to replace all occurrences of `old` with `new` in all files in the quickfix list
+3. Run `:cfdo %s/old/new/g | update | bd` to replace all occurrences of `old` with `new` in all files in the quickfix list
 
 💡 **Pro tip**: In case you want to preview the changes before applying them, you can use the `c` flag in the `:s` command. This will open a confirmation window for each occurrence.
