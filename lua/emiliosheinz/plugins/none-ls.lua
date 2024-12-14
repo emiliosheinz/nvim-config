@@ -20,7 +20,9 @@ local is_prettier_supported = function(utils)
 			return false
 		end
 
-		local package_json = vim.fn.json_decode(vim.fn.readfile("package.json"))
+		local root_dir = require("null-ls.utils").get_root()
+		local package_json_path = root_dir .. "/" .. "package.json"
+		local package_json = vim.fn.json_decode(vim.fn.readfile(package_json_path))
 		return package_json and package_json.prettier
 	end
 
@@ -50,11 +52,23 @@ local is_eslint_supported = function(utils)
 			return false
 		end
 
-		local package_json = vim.fn.json_decode(vim.fn.readfile("package.json"))
+		local root_dir = require("null-ls.utils").get_root()
+		local package_json_path = root_dir .. "/" .. "package.json"
+		local package_json = vim.fn.json_decode(vim.fn.readfile(package_json_path))
 		return package_json and package_json.eslintConfig
 	end
 
 	return has_eslint_config_file() or has_eslint_config_in_package_json()
+end
+
+local is_biome_supported = function(utils)
+	local has_biome_config_file = function()
+		return utils.root_has_file({
+			"biome.json",
+		})
+	end
+
+	return has_biome_config_file()
 end
 
 return {
@@ -65,8 +79,10 @@ return {
 		local null_ls = require("null-ls")
 
 		null_ls.setup({
+			root_dir = require("null-ls.utils").root_pattern(".git", "package.json"),
 			sources = {
 				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.biome.with({ condition = is_biome_supported }),
 				null_ls.builtins.formatting.prettierd.with({ condition = is_prettier_supported }),
 				require("none-ls.diagnostics.eslint_d").with({ condition = is_eslint_supported }),
 				require("none-ls.formatting.eslint_d").with({ condition = is_eslint_supported }),
