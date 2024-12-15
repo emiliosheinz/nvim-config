@@ -52,3 +52,6 @@ vim.keymap.set("i", "<C-h>", "<Left>", { desc = "Move cursor left in insert mode
 vim.keymap.set("i", "<C-j>", "<Down>", { desc = "Move cursor down in insert mode" })
 vim.keymap.set("i", "<C-k>", "<Up>", { desc = "Move cursor up in insert mode" })
 vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mode" })
+
+-- C-f starts tmux sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
