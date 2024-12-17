@@ -26,6 +26,6 @@ return {
       -- end,
     })
 
-    vim.keymap.set({ "n", "v" }, "<leader>gf", vim.lsp.buf.format, { desc = "Format file or selection" })
+    vim.keymap.set({ "n", "v" }, "ff", vim.lsp.buf.format, { desc = "Format file or selection" })
   end,
 }
