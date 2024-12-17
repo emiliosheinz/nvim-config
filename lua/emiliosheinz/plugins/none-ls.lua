@@ -16,16 +16,29 @@ return {
       },
       -- Configures autoformatting on save
       -- on_attach = function(_, bufnr)
-      --   vim.api.nvim_create_autocmd("BufWritePre", {
-      --     group = augroup,
-      --     buffer = bufnr,
-      --     callback = function()
-      --       vim.lsp.buf.format()
-      --     end,
-      --   })
+      -- 	vim.api.nvim_create_autocmd("BufWritePre", {
+      -- 		group = augroup,
+      -- 		buffer = bufnr,
+      -- 		callback = function()
+      -- 			vim.lsp.buf.format()
+      -- 		end,
+      -- 	})
       -- end,
     })
 
-    vim.keymap.set({ "n", "v" }, "ff", vim.lsp.buf.format, { desc = "Format file or selection" })
+    vim.keymap.set({ "n", "v" }, "ff", function()
+      local last_line = vim.fn.line("$")
+      local last_column = vim.fn.col({ last_line, "$" }) - 1
+      vim.lsp.buf.format({
+        range = {
+          -- Format from first to the last line of the the buffer for better performance
+          -- On visual mode it is automatically set to the visual selection
+          -- For some reason lines are 1 indexed and columns 0 🧐
+          -- See: https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
+          ["start"] = { 1, 0 },
+          ["end"] = { last_line, last_column },
+        },
+      })
+    end, { desc = "Format file or selection", silent = true })
   end,
 }
