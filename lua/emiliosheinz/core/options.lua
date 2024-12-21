@@ -44,9 +44,9 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.updatetime = 50
 
 -- Makes sure to not show diagnostics inline
-vim.diagnostic.config({
-	virtual_text = false,
-})
+-- vim.diagnostic.config({
+-- 	virtual_text = false,
+-- })
 
 -- foldings
 vim.opt.foldenable = false
