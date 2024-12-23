@@ -16,7 +16,7 @@ return {
     telescope.setup({
       defaults = {
         vimgrep_arguments = vimgrep_arguments,
-        file_ignore_patterns = { ".git/" },
+        file_ignore_patterns = { ".git/", "phpstan%-baseline.php" },
         path_display = { "smart" },
         mappings = {
           i = {
