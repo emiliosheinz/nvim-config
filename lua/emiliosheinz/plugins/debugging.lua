@@ -15,24 +15,21 @@ return {
     dap.listeners.before.launch.dapui_config = function()
       dapui.open()
     end
-    dap.listeners.before.event_terminated.dapui_config = function()
-      dapui.close()
-    end
-    dap.listeners.before.event_exited.dapui_config = function()
+    dap.listeners.before["disconnect"]["dapui_config"] = function()
       dapui.close()
     end
 
-    vim.keymap.set("n", "<Leader>b", dap.toggle_breakpoint, { desc = "Debug toggle breakpoint" })
     vim.keymap.set("n", "<Leader>?", function()
       dapui.eval(nil, { enter = true })
     end)
 
-    vim.keymap.set("n", "<F1>", dap.continue, { desc = "Debug Continue" })
-    vim.keymap.set("n", "<F2>", dap.step_into, { desc = "Debug Step Into" })
-    vim.keymap.set("n", "<F3>", dap.step_over, { desc = "Debug Step Over" })
-    vim.keymap.set("n", "<F4>", dap.step_out, { desc = "Debug Step Out" })
-    vim.keymap.set("n", "<F5>", dap.step_back, { desc = "Debug Step Back" })
-    vim.keymap.set("n", "<F10>", dap.disconnect, { desc = "Debug Disconnect" })
+    vim.keymap.set("n", "<F9>", dap.toggle_breakpoint, { desc = "Debug toggle breakpoint" })
+    vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug Continue" })
+    vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Debug Step Over" })
+    vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Debug Step Into" })
+    vim.keymap.set("n", "<S-F10>", dap.step_back, { desc = "Debug Step Back" })
+    vim.keymap.set("n", "<S-F11>", dap.step_out, { desc = "Debug Step Out" })
+    vim.keymap.set("n", "<F12>", dap.terminate, { desc = "Debug Terminate" })
 
     dap.adapters.php = {
       command = "node",
