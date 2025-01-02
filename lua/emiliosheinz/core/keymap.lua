@@ -9,6 +9,11 @@ vim.keymap.set("v", "H", "<gv", { desc = "Indent selected lines left" })
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Delete line break" })
 vim.keymap.set("n", "<Enter>", "o<ESC>", { desc = "Insert new line below" })
 vim.keymap.set("n", "<S-Enter>", "O<ESC>", { desc = "Insert new line above" })
+vim.keymap.set({ "n", "v" }, "=", function()
+  vim.lsp.buf.format()
+  -- Escape to exit visual mode
+  vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "n", true)
+end, { desc = "Format selected text", silent = true })
 
 -- native improvements
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Go half page DOWN while keeping cursor centered" })

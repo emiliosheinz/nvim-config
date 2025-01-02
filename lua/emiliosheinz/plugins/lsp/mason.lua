@@ -33,10 +33,10 @@ return {
     config = function()
       require("mason-tool-installer").setup({
         ensure_installed = {
+          "biome",
           "stylua",
           "eslint",
           "prettier",
-          "biome",
         },
       })
     end,
