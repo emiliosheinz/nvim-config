@@ -18,7 +18,7 @@ return {
   },
   {
     "CopilotC-Nvim/CopilotChat.nvim",
-    branch = "canary",
+    branch = "main",
     dependencies = {
       { "github/copilot.vim" },
       { "nvim-lua/plenary.nvim" },
@@ -29,8 +29,6 @@ return {
       local select = require("CopilotChat.select")
       local chat_actions = require("CopilotChat.actions")
       local chat_telescope = require("CopilotChat.integrations.telescope")
-
-      require("CopilotChat.integrations.cmp").setup()
 
       chat.setup({
         window = {
@@ -48,6 +46,7 @@ return {
             'Please, give me a valid JSON where the key and value are the parameters being passed to the several lang function calls. E.g.: lang("parameter") should result in {"parameter": "parameter"}.',
           },
         },
+        chat_autocomplete = true,
       })
 
       vim.keymap.set(
