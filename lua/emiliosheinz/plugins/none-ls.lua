@@ -63,15 +63,15 @@ local is_eslint_supported = function()
 	return has_eslint_config_file() or has_eslint_config_in_package_json()
 end
 
--- local is_biome_supported = function()
--- 	local utils = require("null-ls.utils")
---
--- 	local has_biome_config_file = function()
--- 		return utils.root_pattern("biome.json")(vim.api.nvim_buf_get_name(0)) ~= nil
--- 	end
---
--- 	return has_biome_config_file()
--- end
+local is_biome_supported = function()
+	local utils = require("null-ls.utils")
+
+	local has_biome_config_file = function()
+		return utils.root_pattern("biome.json")(vim.api.nvim_buf_get_name(0)) ~= nil
+	end
+
+	return has_biome_config_file()
+end
 
 return {
 	"nvimtools/none-ls.nvim",
@@ -82,10 +82,10 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				-- null_ls.builtins.formatting.biome.with({
-				-- 	prefer_local = "node_modules/.bin",
-				-- 	condition = is_biome_supported,
-				-- }),
+				null_ls.builtins.formatting.biome.with({
+					prefer_local = "node_modules/.bin",
+					condition = is_biome_supported,
+				}),
 				null_ls.builtins.formatting.prettier.with({
 					prefer_local = "node_modules/.bin",
 					condition = is_prettier_supported,
@@ -111,14 +111,14 @@ return {
 			-- end,
 		})
 
-		vim.keymap.set({ "n", "v" }, "ff", function()
+		vim.keymap.set({ "n", "v" }, "<leader>=", function()
 			local last_line = vim.fn.line("$")
 			local last_column = vim.fn.col({ last_line, "$" }) - 1
 			vim.lsp.buf.format({
 				range = {
-					-- Format from first to the last line of the the buffer for better performance
-					-- On visual mode it is automatically set to the visual selection
-					-- For some reason lines are 1 indexed and columns 0 🧐
+          -- Format from first to the last line of the the buffer for better performance
+          -- On visual mode it is automatically set to the visual selection
+          -- For some reason lines are 1 indexed and columns 0 🧐
 					-- See: https://neovim.io/doc/user/lsp.html#vim.lsp.buf.format()
 					["start"] = { 1, 0 },
 					["end"] = { last_line, last_column },
