@@ -34,6 +34,7 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "stylua",
+          "eslint",
           "prettier",
           "biome",
         },
