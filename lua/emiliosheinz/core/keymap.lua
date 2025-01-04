@@ -60,3 +60,7 @@ vim.keymap.set("i", "<C-l>", "<Right>", { desc = "Move cursor right in insert mo
 
 -- C-f starts tmux sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- Remap add and subtract to a more convenient thing
+vim.keymap.set("n", "+", "<C-a>", { desc = "Add number under cursor" })
+vim.keymap.set("n", "-", "<C-x>", { desc = "Subtract number under cursor" })
