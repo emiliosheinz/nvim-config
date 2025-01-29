@@ -5,6 +5,7 @@
 -- Even though Prettier also can be installed that way, the formatting
 -- is not triggered when vim.lsp.buf.format() is called. That is why
 -- we have to register it using null-ls.
+-- TODO: Possibly it would be better to migrate this entire thing to nvim-lint + conform
 
 local is_prettier_supported = function()
   local utils = require("null-ls.utils")
