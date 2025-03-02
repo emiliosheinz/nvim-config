@@ -4,6 +4,10 @@ return {
   dependencies = {
     "nvim-neotest/nvim-nio",
     "rcarriga/nvim-dap-ui",
+    {
+      "xdebug/vscode-php-debug",
+      build = "npm i && npm run build"
+    },
   },
   config = function()
     local dap = require("dap")
@@ -34,7 +38,7 @@ return {
     dap.adapters.php = {
       command = "node",
       type = "executable",
-      args = { "/Users/emilio.heinzmann/.config/nvim/deps/vscode-php-debug/out/phpDebug.js" },
+      args = { vim.fn.resolve(vim.fn.stdpath("data") .. "/lazy/vscode-php-debug/out/phpDebug.js") },
     }
 
     dap.configurations.php = {
