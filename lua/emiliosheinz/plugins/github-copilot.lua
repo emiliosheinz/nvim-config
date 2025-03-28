@@ -31,12 +31,7 @@ return {
       local chat_telescope = require("CopilotChat.integrations.telescope")
 
       chat.setup({
-        window = {
-          layout = "float",
-          width = 0.8,
-          height = 0.8,
-          row = 2,
-        },
+        window = { width = 0.35 },
         selection = function(source)
           return select.visual(source) or select.buffer(source)
         end,
@@ -57,11 +52,9 @@ return {
       )
 
       vim.keymap.set({ "n", "v" }, "<leader>ccq", function()
-        local input = vim.fn.input("Quick Chat: ")
-        if input ~= "" then
-          chat.ask(input)
-        end
-      end, { desc = "CopilotChat - Quick chat" })
+        chat.reset() -- Reset the chat before opening
+        chat.open() -- Open the chat
+      end, { desc = "CopilotChat - New chat" })
 
       vim.keymap.set({ "n", "v" }, "<leader>ccp", function()
         chat_telescope.pick(chat_actions.prompt_actions())
