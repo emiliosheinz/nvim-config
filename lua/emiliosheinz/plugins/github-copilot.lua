@@ -31,7 +31,12 @@ return {
       local chat_telescope = require("CopilotChat.integrations.telescope")
 
       chat.setup({
-        window = { width = 0.35 },
+        window = {
+          layout = "float",
+          width = 0.8,
+          height = 0.8,
+          row = 2,
+        },
         selection = function(source)
           return select.visual(source) or select.buffer(source)
         end,
