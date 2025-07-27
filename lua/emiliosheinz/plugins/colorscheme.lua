@@ -6,7 +6,15 @@ return {
     config = function()
       require("catppuccin").setup({
         flavour = "mocha",
-        integrations = { mason = true },
+        integrations = { 
+          mason = true,
+        },
+        transparent_background = true,
+        custom_highlights = function(colors)
+          return {
+            NormalFloat = { bg = colors.base, fg = colors.text },
+          }
+        end,
       })
       vim.cmd([[colorscheme catppuccin]])
     end,
