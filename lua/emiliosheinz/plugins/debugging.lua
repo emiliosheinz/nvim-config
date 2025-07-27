@@ -94,7 +94,22 @@ return {
         console = "integratedTerminal",
         internalConsoleOptions = "neverOpen",
         cwd = "${workspaceFolder}",
+      },
+      {
+        name = "Debug Vitest Tests",
+        type = "pwa-node",
+        request = "launch",
+        runtimeArgs = {
+          "--inspect-brk",
+          "${workspaceFolder}/node_modules/vitest/vitest.mjs",
+          "run",
+          "${relativeFile}",
+        },
+        console = "integratedTerminal",
+        internalConsoleOptions = "neverOpen",
+        cwd = "${workspaceFolder}",
       }
+
     }
 
     dapui.setup()
