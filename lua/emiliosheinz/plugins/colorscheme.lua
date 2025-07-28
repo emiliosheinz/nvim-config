@@ -13,6 +13,8 @@ return {
         custom_highlights = function(colors)
           return {
             NormalFloat = { bg = colors.base, fg = colors.text },
+            TelescopeNormal = { bg = colors.base, fg = colors.text },
+            TelescopeSelection = { bg = colors.surface0 },
           }
         end,
       })
