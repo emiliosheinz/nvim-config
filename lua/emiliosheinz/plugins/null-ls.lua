@@ -25,7 +25,7 @@ local is_prettier_supported = function()
       ".prettierrc.toml"
     )(vim.api.nvim_buf_get_name(0)) ~= nil
   end
-  local has_eslint_config_in_package_json = function()
+  local has_prettier_config_in_package_json = function()
     local root_dir = utils.root_pattern("package.json")(vim.api.nvim_buf_get_name(0))
     if not root_dir then
       return false
@@ -34,7 +34,7 @@ local is_prettier_supported = function()
     local package_json = vim.fn.json_decode(vim.fn.readfile(package_json_path))
     return package_json and package_json.eslintConfig
   end
-  return has_prettier_config_file() or has_eslint_config_in_package_json()
+  return has_prettier_config_file() or has_prettier_config_in_package_json()
 end
 
 return {
