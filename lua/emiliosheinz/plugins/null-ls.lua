@@ -32,7 +32,7 @@ local is_prettier_supported = function()
     end
     local package_json_path = root_dir .. "/" .. "package.json"
     local package_json = vim.fn.json_decode(vim.fn.readfile(package_json_path))
-    return package_json and package_json.eslintConfig
+    return package_json and package_json.prettier
   end
   return has_prettier_config_file() or has_prettier_config_in_package_json()
 end
