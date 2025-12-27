@@ -24,6 +24,7 @@ return {
           "lua_ls",
           "ts_ls",
           "tailwindcss",
+          "intelephense"
         },
       })
     end,
@@ -34,10 +35,10 @@ return {
       require("mason-tool-installer").setup({
         ensure_installed = {
           "biome",
-          "stylua",
           "eslint",
           "prettier",
-          "js-debug-adapter"
+          "js-debug-adapter",
+          "stylua"
         },
       })
     end,
