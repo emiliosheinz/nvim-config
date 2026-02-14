@@ -7,8 +7,7 @@ return {
 		"aklt/plantuml-syntax", -- Syntax highlighting for plantuml
 	},
 	config = function()
-		local treesitter = require("nvim-treesitter.configs")
-		treesitter.setup({
+		require("nvim-treesitter").setup({
 			auto_install = true,
 			highlight = {
 				enable = true,
