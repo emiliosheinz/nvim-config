@@ -46,7 +46,7 @@ return {
     null_ls.setup({
       sources = {
         null_ls.builtins.formatting.prettier.with({
-          prefer_local = "node_modules/.bin",
+          -- prefer_local = "node_modules/.bin",
           condition = is_prettier_supported,
         }),
       },
