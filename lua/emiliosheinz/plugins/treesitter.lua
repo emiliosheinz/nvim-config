@@ -1,13 +1,14 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	branch = "master", -- Use stable master branch instead of main
 	event = { "BufReadPre", "BufNewFile" },
 	build = ":TSUpdate",
 	dependencies = {
 		"windwp/nvim-ts-autotag",
-		"aklt/plantuml-syntax", -- Syntax highlighting for plantuml
+		"aklt/plantuml-syntax",
 	},
 	config = function()
-		require("nvim-treesitter").setup({
+		require("nvim-treesitter.configs").setup({
 			auto_install = true,
 			highlight = {
 				enable = true,
