@@ -24,7 +24,8 @@ return {
           "lua_ls",
           "ts_ls",
           "tailwindcss",
-          "intelephense"
+          "intelephense",
+          "jsonls",
         },
       })
     end,
